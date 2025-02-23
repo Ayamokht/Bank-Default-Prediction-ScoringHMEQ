@@ -1,11 +1,11 @@
-# Projet de scoring : Modélisation prédictive des défauts de paiement sur des prêts hypothécaires
+## Projet de scoring : Modélisation prédictive des défauts de paiement sur des prêts hypothécaires
 
 
 
 
-2. **Instructions d'installation :** 
+1. **Instructions d'installation :** 
 
-1.Cloner le projet
+1. Cloner le projet
 
 ```bash
 git clone https://github.com/Ayamokht/Bank-Default-Prediction-ScoringHMEQ.git
@@ -19,11 +19,11 @@ python -m venv venv
 ```
 3. Activer l'environnement virtuel
 
-### On Windows:
+* Windows:
 ```bash
 .\venv\Scripts\activate
 ```
-### On Linux/Mac:
+* Linux/Mac:
 ```bash
 source venv/bin/activate
 ```
@@ -51,6 +51,7 @@ Le projet explore plusieurs modèles de classification pour expliquer la variabl
 * Régression logistique : modèle statistique de base pour la classification binaire.
 * Arbre de décision : permet de capturer des relations non linéaires.
 * Forêts aléatoires : ensemble d'arbres de décision pour une meilleure généralisation.
+
 Les performances des modèles seront évaluées à l'aide des métriques suivantes :
 
 * Précision : pour mesurer le pourcentage de prédictions correctes.
