@@ -1,67 +1,79 @@
-# ScoringHMEQ
+# Projet de scoring : Modélisation prédictive des défauts de paiement sur des prêts hypothécaires
 
-## Instructions d'installation
 
-1. **Créer un environnement virtuel :**
 
-   Dans le dossier parent du projet, exécutez la commande suivante :
-   ```
-   python -m virtualenv .venv --python=python3.11
-   ```
-    Puis il faut l'activer avec : 
-    ```
-    cd .\.venv\Scripts\activate.ps1
-    ```
-    Installer poetry :
-    ```
-    pip install poetry
-    ```
-    Rentrer dans le projet:
-    ```
-    cd .\ScoringHMEQ\
-    ```
-    Installer les dépendances
-    ```
-    poetry install
-    ```
-    Lancer ce code pour définir la variable d'environnement directement dans PowerShell 
-    ```
-    env:PYTHONPATH = "$env:PYTHONPATH;$PWD"
-    ```
-    Lancer le modèle logit 
-    ```
-    python src/cli/cli.py --model logit
-    ```
+
+2. **Instructions d'installation :** 
+
+1.Cloner le projet
+
+```bash
+git clone https://github.com/Ayamokht/Bank-Default-Prediction-ScoringHMEQ.git
+cd Bank-Default-Prediction-ScoringHMEQ
+```
+2. Création d'un environment virtuel
+
+
+```bash
+python -m venv venv
+```
+3. Activer l'environnement virtuel
+
+### On Windows:
+```bash
+.\venv\Scripts\activate
+```
+### On Linux/Mac:
+```bash
+source venv/bin/activate
+```
+4. Installer les dépendances
+
+```bash
+pip install poetry 
+```
+Ensuite, 
+```bash
+poetry install
+```
+
 
 2. **Objectif du projet :**
-Ce projet consiste à proposer un modèle expliquant la variable « BAD » à partir des autres variables disponibles dans le jeu de données hmeq. 
 
-3. **Livrables** :
-Rapport synthétique (.doc) ormatiques utilisés pour réaliser les analyses et le modèle. Le projet peut être réalisé avec Python, R, et/ou SAS. code Python 
+Dans le contexte économique contemporain, la maîtrise du risque de crédit demeure une priorité pour les banques et les établissements financiers. Ce projet vise à développer un modèle prédictif permettant d'estimer la probabilité de défaut de paiement sur des prêts hypothécaires.
 
-4. **Structure du dépôt** :
-- /src : Ce dossier contient tous les scripts Python nécessaires à la réalisation des analyses et à la construction du modèle. 
-- /sandbox : Des notebooks Jupyter utilisés pour tester des idées ou explorer des pistes avant leur implémentation finale dans les scripts.
-- /output : 
-Les graphiques générés lors des analyses, les fichiers de modèles enregistrés, les rapports intermédiaires et résultats chiffrés.
-- rapport.docx : Le document principal contenant le rapport synthétique détaillé des analyses.
+L'objectif principal est d'identifier les facteurs clés influençant le comportement de remboursement des emprunteurs et d'améliorer la gestion du risque de crédit.
 
-5. **Instructions pour exécuter le projet** : 
-Pré-requis : 
-```
-poetry install
-python src/.py
-python src/report_generator.py
-``` 
-Le projet explore plusieurs algorithmes de classification afin d'expliquer la variable cible « BAD » :
-Régression logistique
-Arbre de décision
-Forêts aléatoires
+3. **Modèles et métriques :**
 
-Les modèles seront évalués selon les métriques suivantes :
-Précision
-Recall
-F1-score
-Courbe ROC et AUC
+Le projet explore plusieurs modèles de classification pour expliquer la variable cible "BAD", qui indique si un emprunteur est en défaut de paiement ou non. Les modèles testés incluent :
+
+* Régression logistique : modèle statistique de base pour la classification binaire.
+* Arbre de décision : permet de capturer des relations non linéaires.
+* Forêts aléatoires : ensemble d'arbres de décision pour une meilleure généralisation.
+Les performances des modèles seront évaluées à l'aide des métriques suivantes :
+
+* Précision : pour mesurer le pourcentage de prédictions correctes.
+* Recall : pour mesurer la proportion de cas positifs correctement identifiés.
+* F1-score : pour équilibrer précision et recall.
+* Courbe ROC et AUC : pour évaluer la capacité du modèle à distinguer les classes.
+
+
+4. **Structure du projet** : 
+
+```text
+📁 Bank-Default-Prediction-ScoringHMEQ/
+├── 📁 data/          
+│   ├── 📁 hmeq.csv               
+│
+├── 📁 Sandbox/     
+│   ├── 📁 Analyse_exploratoire_des_données.ipynb       
+│   ├── 📁 Modèle_Regression_Logistique.ipynb    
+│   ├── 📁 Modèle_XGBOOST.ipynb     
+│
+├── pyproject.toml
+├── poetry.lock
+```           
+
 
 
