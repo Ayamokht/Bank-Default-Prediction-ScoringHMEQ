@@ -52,8 +52,11 @@ Le projet explore plusieurs modèles de classification pour expliquer la variabl
 Les performances des modèles seront évaluées à l'aide des métriques suivantes :
 
 📌 Précision : pour mesurer le pourcentage de prédictions correctes.
+
 📌 Recall : pour mesurer la proportion de cas positifs correctement identifiés.
+
 📌 F1-score : pour équilibrer précision et recall.
+
 📌 Courbe ROC et AUC : pour évaluer la capacité du modèle à distinguer les classes.
 
 **📂 Structure du projet** : 
